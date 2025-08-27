@@ -41,7 +41,19 @@ const Hero = () => {
                 <Mail className="mr-2 h-5 w-5" />
                 Get In Touch
               </Button>
-              <Button variant="outline" size="lg" className="bg-white/10 backdrop-blur-sm border-white/20 text-white hover:bg-white/20">
+              <Button 
+                variant="outline" 
+                size="lg" 
+                className="bg-white/10 backdrop-blur-sm border-white/20 text-white hover:bg-white/20"
+                onClick={() => {
+                  const link = document.createElement('a');
+                  link.href = '/aryan-resume.pdf';
+                  link.download = 'Aryan_Namdev_Resume.pdf';
+                  document.body.appendChild(link);
+                  link.click();
+                  document.body.removeChild(link);
+                }}
+              >
                 <Download className="mr-2 h-5 w-5" />
                 Download CV
               </Button>
