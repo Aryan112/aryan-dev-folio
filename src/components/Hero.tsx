@@ -21,7 +21,7 @@ const Hero = () => {
               </Badge>
               <h1 className="text-5xl lg:text-7xl font-bold text-primary-foreground">
                 Hi, I'm{" "}
-                <span className="bg-text-gradient bg-clip-text text-transparent">
+                <span className="font-bold bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent">
                   Aryan
                 </span>
               </h1>
@@ -37,7 +37,16 @@ const Hero = () => {
             </p>
             
             <div className="flex flex-wrap gap-4 justify-center">
-              <Button size="lg" className="shadow-hover">
+              <Button 
+                size="lg" 
+                className="shadow-hover"
+                onClick={() => {
+                  const contactSection = document.getElementById('contact');
+                  if (contactSection) {
+                    contactSection.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+              >
                 <Mail className="mr-2 h-5 w-5" />
                 Get In Touch
               </Button>
@@ -61,13 +70,28 @@ const Hero = () => {
             
             {/* Social Links */}
             <div className="flex gap-4 justify-center">
-              <Button variant="ghost" size="icon" className="text-white hover:bg-white/20 hover:scale-110 transition-all">
+              <Button 
+                variant="ghost" 
+                size="icon" 
+                className="text-white hover:bg-white/20 hover:scale-110 transition-all"
+                onClick={() => window.open('https://github.com/Aryan112', '_blank')}
+              >
                 <Github className="h-5 w-5" />
               </Button>
-              <Button variant="ghost" size="icon" className="text-white hover:bg-white/20 hover:scale-110 transition-all">
+              <Button 
+                variant="ghost" 
+                size="icon" 
+                className="text-white hover:bg-white/20 hover:scale-110 transition-all"
+                onClick={() => window.open('https://www.linkedin.com/in/aryan-namdev-aa898724a/', '_blank')}
+              >
                 <Linkedin className="h-5 w-5" />
               </Button>
-              <Button variant="ghost" size="icon" className="text-white hover:bg-white/20 hover:scale-110 transition-all">
+              <Button 
+                variant="ghost" 
+                size="icon" 
+                className="text-white hover:bg-white/20 hover:scale-110 transition-all"
+                onClick={() => window.open('mailto:aryannamdev2003@gmail.com', '_blank')}
+              >
                 <Mail className="h-5 w-5" />
               </Button>
             </div>
